@@ -9,36 +9,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-/*
- * Project : Strands FM for Android
- *
- * SENSITIVE AND CONFIDENTIAL
- *
- * TRADE SECRETS
- *
- * DO NOT DISCLOSE OR PUBLISH
- *
- * (c) Copyright 2003-2020 Strands, Inc
- *
- * This software and the related information is proprietary to and includes trade secrets of Strands, Inc. ("Strands").
- * Strands intends to preserve its trade secrets in the software and related information. It is released pursuant to a
- * written agreement, and any use or modification of the software is subject to the terms of the Agreement. If you are
- * not authorized under the agreement, any use or modification of the source code for this software by you is unauthorized.
- * Any disclosure, publication or distribution of the source code by you is prohibited unless expressly authorized in the Agreement.
- * Strands will prosecute unauthorized use or modification to the fullest extent allowable under applicable law.
- *
- * ALL RIGHTS RESERVED
+/**
+ * typical RecyclerView.Adapter nothing changed
  */
 public class SimpleAdaptor extends RecyclerView.Adapter<SimpleAdaptor.ViewHolder> {
-
+    // Declare Data
     private List<String> localDataSet;
 
+    // Constructor with Data
     public SimpleAdaptor(List<String> dataSet) {
         localDataSet = dataSet;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        // Get the view holder for the items to be shown
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.rv_item, viewGroup, false);
         return new ViewHolder(view);
@@ -46,6 +31,7 @@ public class SimpleAdaptor extends RecyclerView.Adapter<SimpleAdaptor.ViewHolder
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+        // populate the item with data
         viewHolder.getTextView().setText(localDataSet.get(position));
     }
 
