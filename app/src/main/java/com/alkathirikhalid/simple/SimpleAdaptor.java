@@ -32,7 +32,7 @@ public class SimpleAdaptor extends RecyclerView.Adapter<SimpleAdaptor.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         // populate the item with data
-        viewHolder.getTextView().setText(localDataSet.get(position));
+        viewHolder.textView.setText(localDataSet.get(position));
     }
 
     @Override
@@ -46,10 +46,6 @@ public class SimpleAdaptor extends RecyclerView.Adapter<SimpleAdaptor.ViewHolder
         public ViewHolder(View view) {
             super(view);
             textView = view.findViewById(R.id.tvItem);
-        }
-
-        public TextView getTextView() {
-            return textView;
         }
     }
 
